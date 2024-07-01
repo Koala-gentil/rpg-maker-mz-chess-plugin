@@ -1,5 +1,4 @@
-import "./jquery";
-import "@chrisoakman/chessboardjs/dist/chessboard-1.0.0";
+import "./chessboard";
 import { Chess } from "chess.js";
 import { loadCss, createDialog } from "./utils";
 

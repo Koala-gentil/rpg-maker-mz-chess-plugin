@@ -1,5 +1,4 @@
 const esbuild = require("esbuild");
-const { default: copy } = require("esbuild-plugin-copy");
 
 esbuild.build({
   entryPoints: ["src/index.js"],
@@ -21,14 +20,4 @@ esbuild.build({
  * @desc ID de la variable où le résultat de la partie sera stocké (-1 si perdu, 0 si nul, 1 si gagné).
  */`,
   },
-  plugins: [
-    copy({
-      assets: {
-        from: [
-          "node_modules/@chrisoakman/chessboardjs/dist/chessboard-1.0.0.css",
-        ],
-        to: ["css"],
-      },
-    }),
-  ],
 });
