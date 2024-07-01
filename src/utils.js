@@ -2,7 +2,7 @@ export function loadCss() {
   const link = document.createElement("link");
   link.rel = "stylesheet";
   link.type = "text/css";
-  link.href = "/css/chessboard-1.0.0.css";
+  link.href = "/css/chessboard2.css";
   document.head.appendChild(link);
 }
 
@@ -23,4 +23,19 @@ export function createDialog() {
     dialog,
     removeDialog: () => document.body.removeChild(dialog),
   };
+}
+
+export function createChessboardContainer(dialog) {
+  const container = document.createElement("div");
+  container.style.width = "calc(100% - 30px)";
+  container.style.height = "calc(100% - 30px)";
+  container.style.maxWidth = "calc(100vh - 30px)";
+  container.style.maxHeight = "calc(100vh - 30px)";
+  container.style.backgroundColor = "white";
+  dialog.appendChild(container);
+  return container;
+}
+
+export function wait(time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
 }
